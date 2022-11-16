@@ -1,5 +1,6 @@
 {% set name = "querystring_parser" %}
 {% set version = "1.2.4" %}
+{% set sha256 = "644fce1cffe0530453b43a83a38094dbe422ccba8c9b2f2a1c00280e14ca8a62" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,33 +8,44 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 644fce1cffe0530453b43a83a38094dbe422ccba8c9b2f2a1c00280e14ca8a62
+  sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
-  noarch: python
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
     - pip
     - python
+    - setuptools
+    - wheel
   run:
     - python
     - requests
     - six
 
 test:
+  requires:
+    - pip
   imports:
     - querystring_parser
+  commands:
+    - pip check
 
 about:
   home: https://github.com/bernii/querystring-parser
+  summary: QueryString parser for Python/Django that correctly handles nested dictionaries
+  description: |
+    This repository hosts the query string parser for Python/Django projects that correctly
+    creates nested dictionaries from sent form/querystring data.
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: QueryString parser for Python/Django that correctly handles nested dictionaries
+  license_url: https://github.com/bernii/querystring-parser/blob/master/LICENSE
   dev_url: https://github.com/bernii/querystring-parser
+  doc_url: https://github.com/bernii/querystring-parser/blob/master/README.rst
+  doc_source_url: https://github.com/bernii/querystring-parser/blob/master/README.rst
 
 extra:
   recipe-maintainers:
