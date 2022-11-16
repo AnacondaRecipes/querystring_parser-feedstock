@@ -13,7 +13,6 @@ source:
 build:
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
-  noarch: python
 
 requirements:
   host:
@@ -43,6 +42,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
+  license_url: https://github.com/bernii/querystring-parser/blob/master/LICENSE
   dev_url: https://github.com/bernii/querystring-parser
   doc_url: https://github.com/bernii/querystring-parser/blob/master/README.rst
   doc_source_url: https://github.com/bernii/querystring-parser/blob/master/README.rst
