@@ -22,7 +22,6 @@ requirements:
     - wheel
   run:
     - python
-    - requests
     - six
 
 test:
