@@ -41,7 +41,7 @@ about:
     creates nested dictionaries from sent form/querystring data.
   license: MIT
   license_family: MIT
-  license_url: https://githuqb.com/bernii/querystring-parser/blob/master/LICENSE
+  license_url: https://github.com/bernii/querystring-parser/blob/master/LICENSE
   dev_url: https://github.com/bernii/querystring-parser
   doc_url: https://github.com/bernii/querystring-parser/blob/master/README.rst
 
